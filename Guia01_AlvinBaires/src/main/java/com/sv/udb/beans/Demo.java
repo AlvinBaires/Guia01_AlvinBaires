@@ -13,5 +13,21 @@ package com.sv.udb.beans;
 public class Demo {
     String nombre;
     String aguacate;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getAguacate() {
+        return aguacate;
+    }
+
+    public void setAguacate(String aguacate) {
+        this.aguacate = aguacate;
+    }
     
 }
