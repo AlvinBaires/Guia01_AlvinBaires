@@ -12,6 +12,6 @@ package com.sv.udb.beans;
  */
 public class Demo {
     String nombre;
-    
+    String aguacate;
     
 }
