@@ -1,3 +1,4 @@
+<%@page import="com.sv.udb.controlador.TipoDocuCtrl"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -5,8 +6,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://displaytag.sf.net/el" prefix="display" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="com.sv.udb.controlador.ProcesadorCtrl"%>
-<%@page import="com.sv.udb.modelo.Procesador"%>
+<%@page import="com.sv.udb.controlador.TipoDocuCtrl"%>
+<%@page import="com.sv.udb.modelo.TipoDocu"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,7 +58,7 @@
       <!--main content start-->
       
       <section id="main-content">
-          <form  name="ProcesadorForm" action="ProcesadorServ" class="form-horizontal style-form" method="POST">
+          <form  name="TipoDocuForm" action="TipoDocuServ" class="form-horizontal style-form" method="POST">
               <section class="wrapper">
                   <h3><i class="fa fa-angle-right"></i> Mantenimiento de procesador</h3>
 
@@ -105,8 +106,8 @@
       
       
       <section id="main-content">
-          <form  name="ProcesadorForm" action="ProcesadorServ" class="form-horizontal style-form" method="POST">
-              <jsp:useBean id="beanProcesadorCtrl" class="com.sv.udb.controlador.ProcesadorCtrl" scope="page"/>
+          <form  name="TipoDocuForm" action="TipoDocuServ" class="form-horizontal style-form" method="POST">
+              <jsp:useBean id="beanTipoDocuCtrl" class="com.sv.udb.controlador.TipoDocuCtrl" scope="page"/>
               <section class="wrapper">
                   <div class="row">
 
@@ -116,13 +117,9 @@
                               <hr>
                               <div id = "tblDatos">
                                   <section class="col-md-12">
-                                      <% request.setAttribute("displayBod", new ProcesadorCtrl().consTodo());%>
+                                      <% request.setAttribute("displayBod", new TipoDocuCtrl().consTodo());%>
                                       <display:table id="tablBod" name="displayBod" class="table" pagesize="4">
-                                          <display:column property="nombre" title="Nombre procesador" sortable="true"/>                    
-                                          <display:column property="descripcion" title="Descripcion" sortable="true"/> 
-                                          <display:column title="Selecione" sortable="true">
-                                              <input type="radio" name="idRadi" value="${tablBod.id}"/>
-                                          </display:column>
+                                          <display:column property="CODI_TIPO_DOCU" title="Codigo" sortable="true"/>                                           
                                       </display:table> 
                                   </section>
                               </div>                                  
