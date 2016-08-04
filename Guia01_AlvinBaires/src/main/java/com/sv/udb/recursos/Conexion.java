@@ -39,7 +39,8 @@ public class Conexion {
         try 
         {
             Properties prop = new Properties();
-            String propFileName = URLDecoder.decode(this.getClass().getClassLoader().getResource("config.properties").getPath(),"UTF-8");
+            String propFileName = URLDecoder.decode(this.getClass().getClassLoader().getResource("/config.properties").getPath(),"UTF-8");
+            
             File file = new File(propFileName);
             FileInputStream fis = new FileInputStream(file.getAbsoluteFile());
             prop.load(fis);
@@ -47,10 +48,11 @@ public class Conexion {
             {
                 throw new FileNotFoundException("Propiedades no encontradas dentro de: '" + propFileName + "'");
             }
+
             //Obtener Valores de la Conexion
-            this.url = "jdbc:mysql://localhost:3306/regivisitas";
-            this.user = "root";
-            this.password = "";
+            this.url = prop.getProperty("url");
+            this.user = prop.getProperty("user");
+            this.password = prop.getProperty("password");
             return true;
         }
        catch(Exception ex)
