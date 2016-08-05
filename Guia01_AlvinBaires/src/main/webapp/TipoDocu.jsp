@@ -17,7 +17,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>PROYECTO 3 - POO 1</title>
+    <title>POO 2</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -59,10 +59,9 @@
       
       <section id="main-content">
           <form  name="TipoDocuForm" action="TipoDocuServ" class="form-horizontal style-form" method="POST">
-              <section class="wrapper">
-                  <h3><i class="fa fa-angle-right"></i> Mantenimiento de procesador</h3>
-
-                  <!-- BASIC FORM ELELEMNTS -->
+              <!--<section class="wrapper">
+                 
+                                   
                   <div class="row mt">
                       <div class="col-lg-12">
                           <div class="form-panel">
@@ -93,33 +92,34 @@
                                   <input type="button" class="waves-effect waves-light btn" id="boton"  name="cursBton" value="Eliminar" onclick="return confirm('¿Estas seguro que deseas eliminar este registro?');"/>
                               </div>    
                           </div>
-                      </div><!-- col-lg-12-->      	
-                  </div><!-- /row -->
-              </section>
+                      </div>     	
+                  </div>
+                  
+              </section>-->
           </form>
-      </section>
-                                              
-
-                                              
-                
-      </section><!-- /MAIN CONTENT -->
       
-      
-      <section id="main-content">
+                                          
           <form  name="TipoDocuForm" action="TipoDocuServ" class="form-horizontal style-form" method="POST">
               <jsp:useBean id="beanTipoDocuCtrl" class="com.sv.udb.controlador.TipoDocuCtrl" scope="page"/>
               <section class="wrapper">
+                   <h3><i class="fa fa-angle-right"></i> Tipo Documento</h3>
                   <div class="row">
 
                       <div class="col-md-12">
                           <div class="content-panel">
-                              <h4><i class="fa fa-angle-right"></i>Tabla</h4>
+                              <h4><i class="fa fa-angle-right"></i>Registros</h4>
                               <hr>
                               <div id = "tblDatos">
                                   <section class="col-md-12">
                                       <% request.setAttribute("displayBod", new TipoDocuCtrl().consTodo());%>
                                       <display:table id="tablBod" name="displayBod" class="table" pagesize="4">
-                                          <display:column property="CODI_TIPO_DOCU" title="Codigo" sortable="true"/>                                           
+                                          <display:column property="CODI_TIPO_DOCU" title="Codigo" sortable="true"/>  
+                                          <display:column property="NOMB_TIPO_DOCU" title="Nombre" sortable="true"/>  
+                                          <display:column property="FECH_ALTA" title="Fecha Alta" sortable="true"/>  
+                                          <display:column property="FECH_BAJA" title="Fecha Baja" sortable="true"/>
+                                          <display:column title="Selecione" sortable="true">
+                                              <input type="radio" name="idRadi" value="${tablBod.CODI_TIPO_DOCU}"/>
+                                          </display:column>
                                       </display:table> 
                                   </section>
                               </div>                                  

@@ -11,31 +11,20 @@
                   <li class="sub-menu">
                       <a>
                           <i class="fa fa-cogs"></i>
-                          <span>Caracteristicas PC</span>
+                          <span>Mantenimientos</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="Marca.jsp">Marca</a></li>
-                          <li><a  href="Procesador.jsp">Procesador</a></li>
-                          <li><a  href="DiscoDuro.jsp">Disco duro</a></li>
-                          <li><a  href="Ram.jsp">Memoria RAM</a></li>
+                          <li><a  href="TipoDocu.jsp">Tipo Documento</a></li>
                       </ul>
                   </li>
                   
                   <li class="sub-menu">
-                      <a>
+                      <a href="Reportes.jsp">
                           <i class="fa fa-bar-chart-o"></i>
                           <span>Reportes</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="Marca.jsp">Marca</a></li>
-                          <li><a  href="Procesador.jsp">Procesador</a></li>
-                          <li><a  href="DiscoDuro.jsp">Disco duro</a></li>
-                          <li><a  href="Ram.jsp">Memoria RAM</a></li>
-                      </ul>
                   </li>
                   
-                  
-
               </ul>
               <!-- sidebar menu end-->
           </div>

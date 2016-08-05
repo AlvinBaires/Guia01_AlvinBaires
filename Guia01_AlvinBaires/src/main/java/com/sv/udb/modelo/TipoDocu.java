@@ -1,4 +1,3 @@
-
 package com.sv.udb.modelo;
 
 public class TipoDocu {
