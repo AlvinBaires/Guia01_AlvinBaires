@@ -12,6 +12,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="assets/img/ui-sam.jpg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Dashboard">
@@ -116,19 +117,57 @@
                               <h4><i class="fa fa-angle-right"></i>Reporte 3</h4>
                               Ver las visitas de cada unidad organizativa han realizado en un rango de fechas                             
                               <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Fecha Inicial:</label>
+                                  <label class="col-sm-2 col-sm-2 control-label">Fecha Inicial: (dd/mm/aaaa)</label>
                                   <div class="col-sm-10">
                                       <input type="date" name="fechaInicial" class="form-control"/>
                                   </div>
                               </div>
                               <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Fecha Inicial:</label>
+                                  <label class="col-sm-2 col-sm-2 control-label">Fecha Inicial: (dd/mm/aaaa)</label>
                                   <div class="col-sm-10">
                                       <input type="date" name="fechaFinal" class="form-control"/>
                                   </div>
                               </div>
                               
                               <input type="submit" class="waves-effect waves-light btn"  value="Generar Reporte"/>
+                          </div>     
+                      </div><!-- /col-md-12 -->
+                  </div><!-- row -->              
+          </form>
+                                          
+          <form action="ReporteiText" target="_blank" class="form-horizontal style-form" method="POST">
+                               
+                  <div class="row mt">
+                      <div class="col-lg-12">
+                          <div class="form-panel">
+                              <h4><i class="fa fa-angle-right"></i>Reporte con iText</h4>
+                              Ver listado de usuarios</br>
+                              <input type="submit" class="waves-effect waves-light btn"  value="Generar Reporte"/>
+                          </div>     
+                      </div><!-- /col-md-12 -->
+                  </div><!-- row -->              
+          </form>
+          
+          <form action="Exportar" target="_blank" class="form-horizontal style-form" method="POST">
+                               
+                  <div class="row mt">
+                      <div class="col-lg-12">
+                          <div class="form-panel">
+                              <h4><i class="fa fa-angle-right"></i>Exportar reporte 1</h4>
+                              Ver visitas de una unidad                              
+                              <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">Unidad Organizativa:</label>
+                                  <div class="col-sm-10">
+                                      <select class="form-control" id="cmbUnidOrga" name="cmbUnidOrga">
+                                          <c:forEach items="${beanCtrl.consTodo()}" var="fila">
+                                                  <option data-rule-required="true" name="CODI_UNID_ORGA" value="${fila.CODI_UNID_ORGA}">${fila.NOMB_UNID}</option>                                      
+                                          </c:forEach>
+                                      </select>
+                                  </div>
+                              </div>
+                              <input type="submit" class="waves-effect waves-light btn" name="Exportar" value="EXCEL"/>
+                              <input type="submit" class="waves-effect waves-light btn" name="Exportar" value="PDF"/>
+                              <input type="submit" class="waves-effect waves-light btn" name="Exportar" value="HTML"/>
                           </div>     
                       </div><!-- /col-md-12 -->
                   </div><!-- row -->              

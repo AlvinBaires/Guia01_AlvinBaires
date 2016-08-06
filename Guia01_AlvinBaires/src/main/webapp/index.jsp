@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" href="assets/img/ui-sam.jpg"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -56,7 +57,7 @@
               <div class="row">
                   <div class="col-lg-9 main-chart">
                   
-                      <h1>AQUI TODO EL CONTENIDO</h1>
+                      <img src="assets/img/diagrama.jpg" width="100%"/>
 					
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
                   
@@ -94,44 +95,6 @@
 
     <!--script for this page-->
     <script src="assets/js/sparkline-chart.js"></script>    	
-	
-	
-	
-	<script type="application/javascript">
-        $(document).ready(function () {
-            $("#date-popover").popover({html: true, trigger: "manual"});
-            $("#date-popover").hide();
-            $("#date-popover").click(function (e) {
-                $(this).hide();
-            });
-        
-            $("#my-calendar").zabuto_calendar({
-                action: function () {
-                    return myDateFunction(this.id, false);
-                },
-                action_nav: function () {
-                    return myNavFunction(this.id);
-                },
-                ajax: {
-                    url: "show_data.php?action=1",
-                    modal: true
-                },
-                legend: [
-                    {type: "text", label: "Special event", badge: "00"},
-                    {type: "block", label: "Regular event", }
-                ]
-            });
-        });
-        
-        
-        function myNavFunction(id) {
-            $("#date-popover").hide();
-            var nav = $("#" + id).data("navigation");
-            var to = $("#" + id).data("to");
-            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-        }
-    </script>
-  
 
   </body>
 </html>

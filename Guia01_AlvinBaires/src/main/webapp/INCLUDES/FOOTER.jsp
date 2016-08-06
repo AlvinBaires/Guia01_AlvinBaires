@@ -2,4 +2,4 @@
           <div class="text-center">
               Alvin Gerardo Baires Ramírez              
           </div>
-      </footer>
+</footer>

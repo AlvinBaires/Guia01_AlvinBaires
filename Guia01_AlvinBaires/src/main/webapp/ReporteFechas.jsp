@@ -43,6 +43,8 @@
     }
     catch(Exception err)
     {
-       System.out.println(err.getMessage());
+       %>
+            Fechas no Válidas
+            <%
     }
 %>
