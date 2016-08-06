@@ -108,7 +108,7 @@
               
           </form>
                                           
-          <form action="ReporteVisitas.jsp" target="_blank" class="form-horizontal style-form" method="POST">
+          <form action="ReporteFechas.jsp" target="_blank" class="form-horizontal style-form" method="POST">
                                
                   <div class="row mt">
                       <div class="col-lg-12">
@@ -122,11 +122,12 @@
                                   </div>
                               </div>
                               <div class="form-group">
-                                  <label class="col-sm-2 col-sm-2 control-label">Fecha Final:</label>
+                                  <label class="col-sm-2 col-sm-2 control-label">Fecha Inicial:</label>
                                   <div class="col-sm-10">
                                       <input type="date" name="fechaFinal" class="form-control"/>
                                   </div>
                               </div>
+                              
                               <input type="submit" class="waves-effect waves-light btn"  value="Generar Reporte"/>
                           </div>     
                       </div><!-- /col-md-12 -->
