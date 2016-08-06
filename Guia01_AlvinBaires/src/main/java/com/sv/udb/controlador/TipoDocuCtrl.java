@@ -5,7 +5,7 @@
  */
 package com.sv.udb.controlador;
 
-import com.sv.udb.modelo.TipoDocu;
+import com.sv.udb.modelo.*;
 import com.sv.udb.recursos.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,10 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author vaness
- */
  
 public class TipoDocuCtrl {
     
@@ -163,7 +159,7 @@ public class TipoDocuCtrl {
             ResultSet rs = cmd.executeQuery();
             while(rs.next())
             {   
-                resp.add(new TipoDocu(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4)));
+                resp.add(new TipoDocu(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4), rs.getBlob(5)));
             }
         }
         catch(Exception err)

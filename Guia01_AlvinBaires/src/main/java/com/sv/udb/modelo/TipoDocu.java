@@ -1,20 +1,34 @@
 package com.sv.udb.modelo;
 
+import java.sql.Blob;
+
 public class TipoDocu {
     private int CODI_TIPO_DOCU;
     private String NOMB_TIPO_DOCU, FECH_ALTA, FECH_BAJA;
+    private Blob esta;
+
+    public Blob getEsta() {
+        return esta;
+    }
+
+    public void setEsta(Blob esta) {
+        this.esta = esta;
+    }
     
     public TipoDocu()
     {
         
     }
 
-    public TipoDocu(int CODI_TIPO_DOCU, String NOMB_TIPO_DOCU, String FECH_ALTA, String FECH_BAJA) {
+    public TipoDocu(int CODI_TIPO_DOCU, String NOMB_TIPO_DOCU, String FECH_ALTA, String FECH_BAJA, Blob esta) {
         this.CODI_TIPO_DOCU = CODI_TIPO_DOCU;
         this.NOMB_TIPO_DOCU = NOMB_TIPO_DOCU;
         this.FECH_ALTA = FECH_ALTA;
         this.FECH_BAJA = FECH_BAJA;
-    }        
+        this.esta = esta;
+    }
+
+           
     
     public int getCODI_TIPO_DOCU() {
         return CODI_TIPO_DOCU;

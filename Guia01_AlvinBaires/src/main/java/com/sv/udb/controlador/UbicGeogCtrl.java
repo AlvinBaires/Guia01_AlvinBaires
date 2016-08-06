@@ -5,8 +5,7 @@
  */
 package com.sv.udb.controlador;
 
-import com.sv.udb.modelo.TipoDocu;
-import com.sv.udb.modelo.UbicGeog;
+import com.sv.udb.modelo.*;
 import com.sv.udb.recursos.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author vaness
- */
  
 public class UbicGeogCtrl {
     
@@ -164,7 +159,7 @@ public class UbicGeogCtrl {
             ResultSet rs = cmd.executeQuery();
             while(rs.next())
             {   
-                resp.add(new UbicGeog(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5)));
+                resp.add(new UbicGeog(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5), rs.getBlob(6)));
             }
         }
         catch(Exception err)

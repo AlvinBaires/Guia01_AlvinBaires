@@ -76,11 +76,11 @@ public class TipoDocuServ extends HttpServlet {
 //                } 
             }
             request.setAttribute("mensAler", mens);
-            request.getRequestDispatcher("/Procesador.jsp").forward(request, response);
+            request.getRequestDispatcher("/TipoDocu.jsp").forward(request, response);
         }
         else
         {
-            response.sendRedirect(request.getContextPath() + "/Procesador.jsp");
+            response.sendRedirect(request.getContextPath() + "/TipoDocu.jsp");
         }
     }
     }

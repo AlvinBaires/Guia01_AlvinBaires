@@ -5,9 +5,7 @@
  */
 package com.sv.udb.controlador;
 
-import com.sv.udb.modelo.TipoDocu;
-import com.sv.udb.modelo.UbicGeog;
-import com.sv.udb.modelo.UnidOrga;
+import com.sv.udb.modelo.*;
 import com.sv.udb.recursos.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,10 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author vaness
- */
  
 public class UnidOrgaCtrl {
     
@@ -165,7 +159,7 @@ public class UnidOrgaCtrl {
             ResultSet rs = cmd.executeQuery();
             while(rs.next())
             {   
-                resp.add(new UnidOrga(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),new UbicGeog(rs.getInt(14),rs.getString(15),rs.getInt(16),rs.getString(17),rs.getString(18)),rs.getString(11),rs.getString(12)));
+                resp.add(new UnidOrga(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),new UbicGeog(rs.getInt(14),rs.getString(15),rs.getInt(16),rs.getString(17),rs.getString(18), rs.getBlob(19)),rs.getString(11),rs.getString(12),rs.getBlob(13)));
             }
         }
         catch(Exception err)

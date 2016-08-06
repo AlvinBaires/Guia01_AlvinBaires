@@ -5,6 +5,8 @@
  */
 package com.sv.udb.modelo;
 
+import java.sql.Blob;
+
 /**
  *
  * @author Alvin
@@ -16,13 +18,22 @@ public class UnidOrga {
     String DIRE_UNID_ORGA, TELE_UNID_ORGA, FAX_UNID_ORGA, EMAI_UNID_ORGA,CONT_UNID_ORGA;
     UbicGeog CODI_UBIC_GEO;
     String FECH_ALTA, FECH_BAJA;
+    private Blob esta;
+
+    public Blob getEsta() {
+        return esta;
+    }
+
+    public void setEsta(Blob esta) {
+        this.esta = esta;
+    }
 
     public UnidOrga()
     {
         
     }
-    
-    public UnidOrga(int CODI_UNID_ORGA, String NOMB_UNID, String SIGL_UNID_ORGA, int CODI_UNID_ORGA_SUPE, String DIRE_UNID_ORGA, String TELE_UNID_ORGA, String FAX_UNID_ORGA, String EMAI_UNID_ORGA, String CONT_UNID_ORGA, UbicGeog CODI_UBIC_GEO, String FECH_ALTA, String FECH_BAJA) {
+
+    public UnidOrga(int CODI_UNID_ORGA, String NOMB_UNID, String SIGL_UNID_ORGA, int CODI_UNID_ORGA_SUPE, String DIRE_UNID_ORGA, String TELE_UNID_ORGA, String FAX_UNID_ORGA, String EMAI_UNID_ORGA, String CONT_UNID_ORGA, UbicGeog CODI_UBIC_GEO, String FECH_ALTA, String FECH_BAJA, Blob esta) {
         this.CODI_UNID_ORGA = CODI_UNID_ORGA;
         this.NOMB_UNID = NOMB_UNID;
         this.SIGL_UNID_ORGA = SIGL_UNID_ORGA;
@@ -35,7 +46,10 @@ public class UnidOrga {
         this.CODI_UBIC_GEO = CODI_UBIC_GEO;
         this.FECH_ALTA = FECH_ALTA;
         this.FECH_BAJA = FECH_BAJA;
+        this.esta = esta;
     }
+    
+    
     
     public int getCODI_UNID_ORGA() {
         return CODI_UNID_ORGA;

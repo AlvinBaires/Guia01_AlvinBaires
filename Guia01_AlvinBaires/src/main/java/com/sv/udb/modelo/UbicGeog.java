@@ -5,28 +5,38 @@
  */
 package com.sv.udb.modelo;
 
-/**
- *
- * @author Alvin
- */
+import java.sql.Blob;
+
 public class UbicGeog {
     int CODI_UBIC_GEOG;
     String NOMB_UBIC_GEOG;
     int CODI_UBIC_GEOG_SUPE;
     String FECH_ALTA, FECH_BAJA;
+    private Blob esta;
+
+    public Blob getEsta() {
+        return esta;
+    }
+
+    public void setEsta(Blob esta) {
+        this.esta = esta;
+    }
     
     public UbicGeog()
     {
         
     }
 
-    public UbicGeog(int CODI_UBIC_GEOG, String NOMB_UBIC_GEOG, int CODI_UBIC_GEOG_SUPE, String FECH_ALTA, String FECH_BAJA) {
+    public UbicGeog(int CODI_UBIC_GEOG, String NOMB_UBIC_GEOG, int CODI_UBIC_GEOG_SUPE, String FECH_ALTA, String FECH_BAJA, Blob esta) {
         this.CODI_UBIC_GEOG = CODI_UBIC_GEOG;
         this.NOMB_UBIC_GEOG = NOMB_UBIC_GEOG;
         this.CODI_UBIC_GEOG_SUPE = CODI_UBIC_GEOG_SUPE;
         this.FECH_ALTA = FECH_ALTA;
         this.FECH_BAJA = FECH_BAJA;
+        this.esta = esta;
     }
+
+    
     
     public int getCODI_UBIC_GEOG() {
         return CODI_UBIC_GEOG;

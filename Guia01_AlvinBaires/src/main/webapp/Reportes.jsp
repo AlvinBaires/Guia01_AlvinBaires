@@ -57,16 +57,15 @@
       <!--main content start-->
       
       <section id="main-content">
-                                                    
-          <form  name="ReportesForm" action="ReportesServ" class="form-horizontal style-form" method="POST">
-              <jsp:useBean id="beanTipoDocuCtrl" class="com.sv.udb.controlador.TipoDocuCtrl" scope="page"/>
-              <section class="wrapper">                   
+          
+          <section class="wrapper">                       
+          <form action="ReporteVisitas.jsp" target="_blank" class="form-horizontal style-form" method="POST">
+                               
                   <div class="row mt">
                       <div class="col-lg-12">
                           <div class="form-panel">
                               <h4><i class="fa fa-angle-right"></i>Reporte 1</h4>
-                              Ver visitas de una unidad
-                              
+                              Ver visitas de una unidad                              
                               <div class="form-group">
                                   <label class="col-sm-2 col-sm-2 control-label">Unidad Organizativa:</label>
                                   <div class="col-sm-10">
@@ -78,13 +77,65 @@
                                       </select>
                                   </div>
                               </div>
-                              <input type="button" class="waves-effect waves-light btn"   name="cursBton" value="Generar Reporte 1"/>
+                              <input type="submit" class="waves-effect waves-light btn"  value="Generar Reporte"/>
+                          </div>     
+                      </div><!-- /col-md-12 -->
+                  </div><!-- row -->              
+          </form>
+          
+          <form action="ReportePersonas.jsp" target="_blank" class="form-horizontal style-form" method="POST">
+                               
+                  <div class="row mt">
+                      <div class="col-lg-12">
+                          <div class="form-panel">
+                              <h4><i class="fa fa-angle-right"></i>Reporte 2</h4>
+                              Ver lugar, fecha y hora de acceso y salida de una persona, así como la unidad organizativa que ha visitado.                            
+                              <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">Persona:</label>
+                                  <div class="col-sm-10">
+                                      <select class="form-control" id="cmbPers" name="cmbPers">
+                                      <jsp:useBean id="beanPersCtrl" class="com.sv.udb.controlador.PersCtrl" scope="page"/>
+                                          <c:forEach items="${beanPersCtrl.consTodo()}" var="fila">
+                                                  <option data-rule-required="true" name="CODI_UNID_ORGA" value="${fila.codi_pers}">${(fila.nomb_pers.concat(" ")).concat(fila.apel_pers)}</option>                                      
+                                          </c:forEach>
+                                      </select>
+                                  </div>
+                              </div>
+                              <input type="submit" class="waves-effect waves-light btn"  value="Generar Reporte"/>
                           </div>     
                       </div><!-- /col-md-12 -->
                   </div><!-- row -->
-              </section>
+              
           </form>
-      </section><!-- /MAIN CONTENT -->
+                                          
+          <form action="ReporteVisitas.jsp" target="_blank" class="form-horizontal style-form" method="POST">
+                               
+                  <div class="row mt">
+                      <div class="col-lg-12">
+                          <div class="form-panel">
+                              <h4><i class="fa fa-angle-right"></i>Reporte 3</h4>
+                              Ver las visitas de cada unidad organizativa han realizado en un rango de fechas                             
+                              <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">Fecha Inicial:</label>
+                                  <div class="col-sm-10">
+                                      <input type="date" name="fechaInicial" class="form-control"/>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="col-sm-2 col-sm-2 control-label">Fecha Final:</label>
+                                  <div class="col-sm-10">
+                                      <input type="date" name="fechaFinal" class="form-control"/>
+                                  </div>
+                              </div>
+                              <input type="submit" class="waves-effect waves-light btn"  value="Generar Reporte"/>
+                          </div>     
+                      </div><!-- /col-md-12 -->
+                  </div><!-- row -->              
+          </form>
+                                          
+          </section>
+                                          
+      </section>
 
       <!--main content end-->
       <!--footer start-->
@@ -114,25 +165,7 @@
 	
 	<!--custom checkbox & radio-->
 	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
-	
-  <script>
-    $(document).ready(function() {
-            $("input[name='cursBton']").click(function(event) {
-                //alert("Si entra al evento");
-                var cursBton = $(this).val();
-                var form = $(this).closest("form");
-                $.ajax( {
-                type: "POST",
-                url: form.attr('action'),
-                data: form.serialize() + "&cursBton=" + cursBton,
-                success: function(response) {
-                    //alert("Si entra al evento");
-                    alert("SI");
-                }
-              });
-            });
-        });
-</script>
+
 
   </body>
 </html>
